@@ -67,10 +67,17 @@ function level.move(lvl, ox, oy, dx, dy, colls)
 end
 
 function level.bl(lvl, x, y, replace)
+  local line = lvl.map[math.floor(y)]
+  if not line then return 'x' end
+  local value = line[math.floor(x)]
+  if not value then return 'x' end
+
   if replace then
-    lvl.map[math.floor(y)][math.floor(x)] = replace
+    line[math.floor(x)] = replace
+    return replace
+  else
+    return value
   end
-  return lvl.map[math.floor(y)][math.floor(x)];
 end
 
 function level.ray(lvl, x, y, dir)

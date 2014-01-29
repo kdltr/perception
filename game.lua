@@ -64,7 +64,6 @@ function game.update(dt)
     end
     if removable then
       table.remove(lvl.coinspos, removable)
-      print('removed '..removable)
     end
   elseif r.collect == 'n' then
     playing = false
