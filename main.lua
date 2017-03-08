@@ -69,7 +69,7 @@ function love.gamepadreleased(j, b)
 end
 
 function love.keypressed(key)
-  --if key == 'd' then debugmode = not debugmode end
+  if key == 'd' then debugmode = not debugmode end
   if key == 'q' then love.event.quit() end
   if key == 'f' then love.window.setFullscreen(not love.window.getFullscreen) end
   if key == 'up' then
@@ -126,7 +126,7 @@ function love.draw()
 
   if finishTimer > 12 then
     love.graphics.setColor(0, 0, 0, 255 * math.max((finishTimer - 12) / 6, 0))
-    love.graphics.rectangle('fill', 0, 0, love.window.getDimensions())
+    love.graphics.rectangle('fill', 0, 0, love.graphics.getDimensions())
   end
 
   if debugmode then gdebug.draw() end

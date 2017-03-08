@@ -8,7 +8,7 @@ local ww, wh;
 
 
 function graph.init()
-  ww, wh = love.window.getDimensions()
+  ww, wh = love.graphics.getDimensions()
 end
 
 function graph.update(m, mchanges)
